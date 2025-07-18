@@ -36,6 +36,8 @@ app.post('/new', (req, res) => {
 	res.redirect('/');
 });
 
-app.listen(4000);   
+const PORT = process.env.PORT || 4000;
+
+app.listen(PORT);   
 
 module.exports = messages;
