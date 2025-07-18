@@ -23,15 +23,19 @@ app.get('/', (req, res) => {
 	res.render('index', { title: 'Mini message dashboard', messages: messages });
 });
 
+app.get('/new', (req, res) => {
+    res.render('messageForm');
+});
+
 app.post('/new', (req, res) => {
 	const messageText = req.body.authorMessage;
 	const author = req.body.authorName;
 
-	messages.push({ text : messageText, user: author, added: new Date()});
+	messages.push({ text: messageText, user: author, added: new Date() });
 
-    res.redirect('/');
+	res.redirect('/');
 });
 
-app.listen(4000);
+app.listen(4000);   
 
 module.exports = messages;
