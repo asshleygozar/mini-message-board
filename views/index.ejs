@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>Home</title>
+	</head>
+	<body>
+        <h1><%= title %></h1>
+		<ul>
+			<% for (let i = 0; i < messages.length; i++) { %>
+                <li>
+                    <span><%= messages[i].text %></span>
+                    <span><%= messages[i].user %></span>
+                    <span><%= messages[i].added %></span>
+                </li>
+           <% } %>
+		</ul>
+        <%- include('form') %>
+	</body>
+</html>
